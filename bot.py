@@ -1,6 +1,7 @@
 from pyrogram import Client 
 from config import API_ID, API_HASH, BOT_TOKEN, FORCE_SUB, PORT, LOG_CHANNEL
 from aiohttp import web
+from userbot import User
 from route import web_server
 
 class Bot(Client):
@@ -41,7 +42,10 @@ class Bot(Client):
     async def stop(self, *args):
         await super().stop()      
         print("Bot Stopped")
-       
+ 
+apps = [User]
+for app in apps:
+    app.start()    
 
 bot=Bot()
 bot.run()
