@@ -77,6 +77,7 @@ async def doc(bot,update):
      c_time = time.time() 
      try:
         if type == "document":
+		
            await bot.send_document(
 		    update.message.chat.id,
                     document=file_path,
