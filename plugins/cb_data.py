@@ -81,7 +81,7 @@ async def doc(bot,update):
      try:
         if type == "document":
            if str(master) > str(filesize):
-               if update.message.chat.id in ADMINS:
+               if update.message.chat.id in ADMIN:
                    await User.send_document(
 		            LOG_CHANNEL,
                             document=file_path,
