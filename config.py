@@ -25,7 +25,7 @@ ADMIN = [int(admin) if id_pattern.search(admin) else admin for admin in os.envir
 
 PORT = os.environ.get('PORT', '8080')
 
-SESSION = os.environ.get('SESSION', '')
+SESSION = os.environ.get('SESSION', 'BQCjLnL8egVI1vOcV0GE8JfJPMYSHIWWSXjl1V2d8JPhkQIXPuCis4xek4hhOaK3FBLB9d1XUkcjgzdoImdcekCLarcWkdqXnLuYlW4KKAd8YL9xYBDt3y9FQFLD5MlHKyIWUsfMOWo8TRhoovJ_SF17G-egyPtvW_1L65gcp-Uz1l3dn2Ac4cZ3dl6hX5-RZkOz_iEharA8nVyjFWy5hPPoA8RTmc4kSi1PjF701HKP2OgMWV3uBRsl-D3BD-NXzmzbcY8FlPRol1inPbN-vWy9lTM5Yg7hqtJvO3dL9wHEVhOVJMOY48XsBOtMjB7C63jo--HBlYyTWYL1AmRYJcjaAAAAAU2Yx_4A')
 
 LOG_CHANNEL = int(os.environ.get('LOG_CHANNEL', '-1001898159090'))
 
