@@ -55,8 +55,8 @@ async def doc(bot,update):
      user_id = int(update.message.chat.id) 
      ph_path = None 
      media = getattr(file, file.media.value)
-	
-	
+     filesize = humanize.naturalsize(media.file_size)
+     master = 2090000000
      c_caption = await db.get_caption(update.message.chat.id)
      c_thumb = await db.get_thumbnail(update.message.chat.id)
      if c_caption:
@@ -80,7 +80,15 @@ async def doc(bot,update):
      c_time = time.time() 
      try:
         if type == "document":
-		
+           if str(master) > str(filesize):
+               if update.message.chat.id in ADMINS
+                   await User.send_document(
+		       update.message.chat.id,
+                       document=file_path,
+                    thumb=ph_path, 
+                    caption=caption, 
+                    progress=progress_for_pyrogram,
+                    progress_args=( "𝚃𝚁𝚈𝙸𝙽𝙶 𝚃𝙾 𝚄𝙿𝙻𝙾𝙰𝙳𝙸𝙽𝙶....",  ms, c_time   ))   
            await bot.send_document(
 		    update.message.chat.id,
                     document=file_path,
