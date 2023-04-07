@@ -90,13 +90,15 @@ async def doc(bot,update):
                            progress=progress_for_pyrogram,
                            progress_args=( "𝚃𝚁𝚈𝙸𝙽𝙶 𝚃𝙾 𝚄𝙿𝙻𝙾𝙰𝙳𝙸𝙽𝙶....",  ms, c_time   ))  
                else:
-           await bot.send_document(
-                    update.message.chat.id,
-                    document=file_path,
-                    thumb=ph_path, 
-                    caption=caption, 
-                    progress=progress_for_pyrogram,
-                    progress_args=( "𝚃𝚁𝚈𝙸𝙽𝙶 𝚃𝙾 𝚄𝙿𝙻𝙾𝙰𝙳𝙸𝙽𝙶....",  ms, c_time   ))
+                   await ms.edit("Hey Man This is 2gb + i cant upload that My Admins only support 2gb + ok")
+           else:
+               await bot.send_document(
+                       update.message.chat.id,
+                       document=file_path,
+                       thumb=ph_path, 
+                       caption=caption, 
+                       progress=progress_for_pyrogram,
+                       progress_args=( "𝚃𝚁𝚈𝙸𝙽𝙶 𝚃𝙾 𝚄𝙿𝙻𝙾𝙰𝙳𝙸𝙽𝙶....",  ms, c_time   ))
         elif type == "video": 
             await bot.send_video(
 		    update.message.chat.id,
