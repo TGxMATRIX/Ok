@@ -7,7 +7,7 @@ from helper.database import db
 from config import ADMINS
 import os 
 import humanize
-from helper.utlis import humanbytes 
+
 from PIL import Image
 import time
 
@@ -55,6 +55,7 @@ async def doc(bot,update):
      user_id = int(update.message.chat.id) 
      ph_path = None 
      media = getattr(file, file.media.value)
+	
      c_caption = await db.get_caption(update.message.chat.id)
      c_thumb = await db.get_thumbnail(update.message.chat.id)
      if c_caption:
