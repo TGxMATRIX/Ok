@@ -4,10 +4,10 @@ from pyrogram.types import (  InlineKeyboardButton, InlineKeyboardMarkup,ForceRe
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from helper.database import db
-from config import ADMINS, LOG_CHANNEL
+from config import ADMIN, LOG_CHANNEL
 import os 
 import humanize
-
+from userbot import User
 from PIL import Image
 import time
 
