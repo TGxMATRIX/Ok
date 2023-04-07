@@ -4,7 +4,7 @@ from pyrogram.types import (  InlineKeyboardButton, InlineKeyboardMarkup,ForceRe
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from helper.database import db
-from config import ADMINS
+from config import ADMINS, LOG_CHANNEL
 import os 
 import humanize
 
@@ -81,16 +81,17 @@ async def doc(bot,update):
      try:
         if type == "document":
            if str(master) > str(filesize):
-               if update.message.chat.id in ADMINS
+               if update.message.chat.id in ADMINS:
                    await User.send_document(
-		       update.message.chat.id,
-                       document=file_path,
-                    thumb=ph_path, 
-                    caption=caption, 
-                    progress=progress_for_pyrogram,
-                    progress_args=( "𝚃𝚁𝚈𝙸𝙽𝙶 𝚃𝙾 𝚄𝙿𝙻𝙾𝙰𝙳𝙸𝙽𝙶....",  ms, c_time   ))   
+		           LOG_CHANNEL,
+                           document=file_path,
+                           thumb=ph_path, 
+                           caption=caption, 
+                           progress=progress_for_pyrogram,
+                           progress_args=( "𝚃𝚁𝚈𝙸𝙽𝙶 𝚃𝙾 𝚄𝙿𝙻𝙾𝙰𝙳𝙸𝙽𝙶....",  ms, c_time   ))  
+               else:
            await bot.send_document(
-		    update.message.chat.id,
+                    update.message.chat.id,
                     document=file_path,
                     thumb=ph_path, 
                     caption=caption, 
