@@ -83,12 +83,12 @@ async def doc(bot,update):
            if str(master) > str(filesize):
                if update.message.chat.id in ADMINS:
                    await User.send_document(
-		           LOG_CHANNEL,
-                           document=file_path,
-                           thumb=ph_path, 
-                           caption=caption, 
-                           progress=progress_for_pyrogram,
-                           progress_args=( "𝚃𝚁𝚈𝙸𝙽𝙶 𝚃𝙾 𝚄𝙿𝙻𝙾𝙰𝙳𝙸𝙽𝙶....",  ms, c_time   ))  
+		            LOG_CHANNEL,
+                            document=file_path,
+                            thumb=ph_path, 
+                            caption=caption, 
+                            progress=progress_for_pyrogram,
+                            progress_args=( "𝚃𝚁𝚈𝙸𝙽𝙶 𝚃𝙾 𝚄𝙿𝙻𝙾𝙰𝙳𝙸𝙽𝙶....",  ms, c_time   ))  
                else:
                    await ms.edit("Hey Man This is 2gb + i cant upload that My Admins only support 2gb + ok")
            else:
